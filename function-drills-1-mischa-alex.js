@@ -8,13 +8,16 @@ function getYearOfBirth (age) {
 function createGreeting (name, age) {
   if(!name || !age){
     throw new Error('please enter your name and age!!');
+  } 
+  if (typeof name !== "string" || typeof age !== "number") {
+    throw new TypeError('please enter name as a string and age as a number');
   }
   const yob = getYearOfBirth(age);
   return `Hi, my name is ${name} and I'm ${age} years old. I was born in ${yob}.`;
 }
 
 try{
-  const greeting1 = createGreeting('Alex', -13); 
+  const greeting1 = createGreeting('Alex', 13); 
   console.log(greeting1);
 }catch(e) {
   console.log(e);
