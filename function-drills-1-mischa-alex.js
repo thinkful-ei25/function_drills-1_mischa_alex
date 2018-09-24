@@ -20,5 +20,5 @@ try{
   const greeting1 = createGreeting('Alex', 13); 
   console.log(greeting1);
 }catch(e) {
-  console.log(e);
+  console.log(e.message);
 }
